@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    <color name="colorAccent">#D50000</color>
+
+    <color name="textDarkPrimary">#000000</color>
+    <color name="textDarkSecondary">#B3000000</color>
+    <color name="textDarkHint">#60000000</color>
+    <color name="colorDarkDivider">#30000000</color> <!-- and Icons -->
+
+    <color name="textLightPrimary">#FFFFFF</color>
+    <color name="textLightSecondary">#B3FFFFFF</color>
+    <color name="textLightHint">#80FFFFFF</color>
+    <color name="colorLightDivider">#30FFFFFF</color>
+</resources>
