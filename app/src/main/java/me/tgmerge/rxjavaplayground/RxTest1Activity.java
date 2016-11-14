@@ -9,6 +9,8 @@ import android.util.Log;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.functions.Action0;
+import rx.functions.Action1;
 
 public class RxTest1Activity extends Activity {
 
@@ -63,6 +65,7 @@ public class RxTest1Activity extends Activity {
         // ---
 
         // Code 3 - 创建 Observable
+        /* 其实这里就是“让subscriber可以干一系列事情”这样 */
         Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
 
             @Override
@@ -82,5 +85,28 @@ public class RxTest1Activity extends Activity {
         // Code 4 - 订阅
         observable.subscribe(subscriber);
 
+        // Code 5 - 使用回调方法创建Subscriber
+        Action1<String> onNextAction = new Action1<String>() {
+            @Override
+            public void call(String s) {
+                Log.d(TAG, "call: onNextAction " + s);
+            }
+        };
+
+        Action1<Throwable> onErrorAction = new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                Log.e(TAG, "call: onErrorAction", throwable);
+            }
+        };
+
+        Action0 onCompletedAction = new Action0() {
+            @Override
+            public void call() {
+                Log.d(TAG, "call: onCompletedAction");
+            }
+        };
+
+        observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
     }
 }

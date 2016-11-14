@@ -46,3 +46,17 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
     }
 ```
 
+使用回调方法创建 Subscriber - Code 5
+
+使用`observable.subscribe(Action1 onNext, Action1 onError, Action0 onCompleted)`方法，可以无需显示地创建 Subscriber，而让 Observable 根据相应的动作隐式地自行创建 Subscriber。
+
+## 场景示例
+
+依次打印字符串数组中的字符串 - Code 6
+
+使用`Observable.from(T[] array)`。
+
+`Observable.from()`可以从一个数组创建 Observable，依次发送它们。
+
+从 ID 取得图片并显示出来 - Code 7
+

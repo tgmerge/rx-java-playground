@@ -22,4 +22,8 @@ public class TestActivity extends Activity {
     public void openRxTest1Activity(View view) {
         RxTest1Activity.start(this);
     }
+
+    public void openRxTest2Activity(View view) {
+        RxTest2Activity.start(this);
+    }
 }
