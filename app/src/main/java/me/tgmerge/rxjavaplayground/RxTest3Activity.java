@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import rx.Observable;
-import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;

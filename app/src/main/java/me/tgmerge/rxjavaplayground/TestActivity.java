@@ -30,4 +30,8 @@ public class TestActivity extends Activity {
     public void openRxTest3Activity(View view) {
         RxTest3Activity.start(this);
     }
+
+    public void openRxTest4Activity(View view) {
+        RxTest4Activity.start(this);
+    }
 }
