@@ -60,3 +60,28 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
 
 从 ID 取得图片并显示出来 - Code 7
 
+使用`Observable.create( new OnSubscribe<T> ).subscribe( new Observer<T> )`。
+
+## 线程控制
+
+Code 8, Code 9 - 线程控制
+
+不指定线程的时候，会在调用`subscribe()`的线程中生产事件和消费事件。
+
+如果需要切换线程，需要使用`Scheduler`。RxJava 内置的 Scheduler：
+
+* `Schedulers.immediate()`：在当前线程运行，相当于不指定线程（默认值）。
+* `Schedulers.newThread()`：总是在新的线程中执行操作。
+* `Schedulers.io()`：使用一个无上限的线程池进行操作，适用于读写文件/数据库和网络请求。
+* `Schedulers.computation()`：使用一个根据 CPU 核心数调节容量的线程池操作，进行 CPU 密集型计算。
+* `AndroidSchedulers.mainThread()`：在 Android 的主线程（UI线程）进行操作。
+
+可以用`subscribeOn()`和`observeOn()`两个方法对线程进行控制。
+
+* `subscribeOn()`：指定`subscribe()`发生的线程，也就是`Observable.OnSubscribe`被激活时所在的线程（事件产生的线程）。
+* `observeOn()`：指定`Subscriber`所处的线程（事件消费的线程）。
+
+`subscribeOn(Scheduler.io())`和`observeOn(AndroidSchedulers.mainThread())`的组合非常适用于从 **后台线程获取数据，在主线程显示数据** 的情景。
+
+## 变换
+

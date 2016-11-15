@@ -30,17 +30,17 @@ public class RxTest1Activity extends Activity {
         Observer<String> observer = new Observer<String>() {
             @Override
             public void onCompleted() {
-                Log.d(TAG, "Completed!");
+                Log.d(TAG, "Code 1 - Completed!");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "Error!");
+                Log.d(TAG, "Code 1 - Error!");
             }
 
             @Override
             public void onNext(String s) {
-                Log.d(TAG, "onNext: item: " + s);
+                Log.d(TAG, "Code 1 - onNext item: " + s);
             }
         };
         // ---
@@ -49,17 +49,17 @@ public class RxTest1Activity extends Activity {
         Subscriber<String> subscriber = new Subscriber<String>() {
             @Override
             public void onCompleted() {
-                Log.d(TAG, "onCompleted - subscriber");
+                Log.d(TAG, "Code 2 - onCompleted - subscriber");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "onError - subscriber");
+                Log.d(TAG, "Code 2 - onError - subscriber");
             }
 
             @Override
             public void onNext(String s) {
-                Log.d(TAG, "onNext: item: " + s);
+                Log.d(TAG, "Code 2 - onNext: item: " + s);
             }
         };
         // ---
@@ -89,21 +89,21 @@ public class RxTest1Activity extends Activity {
         Action1<String> onNextAction = new Action1<String>() {
             @Override
             public void call(String s) {
-                Log.d(TAG, "call: onNextAction " + s);
+                Log.d(TAG, "Code 5 - call: onNextAction " + s);
             }
         };
 
         Action1<Throwable> onErrorAction = new Action1<Throwable>() {
             @Override
             public void call(Throwable throwable) {
-                Log.e(TAG, "call: onErrorAction", throwable);
+                Log.e(TAG, "Code 5 - call: onErrorAction", throwable);
             }
         };
 
         Action0 onCompletedAction = new Action0() {
             @Override
             public void call() {
-                Log.d(TAG, "call: onCompletedAction");
+                Log.d(TAG, "Code 5 - call: onCompletedAction");
             }
         };
 

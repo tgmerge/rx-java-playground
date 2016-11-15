@@ -35,7 +35,7 @@ public class RxTest2Activity extends Activity {
 
                     @Override
                     public void call(String s) {
-                        Log.d(TAG, "onNext from code 6: " + s);
+                        Log.d(TAG, "Code 6 - onNext: " + s);
                     }
                 });
 
@@ -53,12 +53,12 @@ public class RxTest2Activity extends Activity {
         }).subscribe(new Observer<Drawable>() {
             @Override
             public void onCompleted() {
-                Log.d(TAG, "onCompleted from code 7");
+                Log.d(TAG, "Code 7 - onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-                Toast.makeText(RxTest2Activity.this, "onError from code 7", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RxTest2Activity.this, "Code 7 - onError", Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -26,5 +26,10 @@
             android:onClick="openRxTest2Activity"
             android:text="Open RxTest2 Activity" />
 
+        <Button
+            style="@style/TestButton"
+            android:onClick="openRxTest3Activity"
+            android:text="Open RxTest3 Activity" />
+
     </LinearLayout>
 </ScrollView>

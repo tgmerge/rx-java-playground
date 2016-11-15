@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RxTest1Activity" />
-        <activity android:name=".RxTest2Activity"></activity>
+        <activity android:name=".RxTest2Activity" />
+        <activity android:name=".RxTest3Activity"></activity>
     </application>
 
 </manifest>
