@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground;
+package me.tgmerge.rxjavaplayground.part1_rx;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import me.tgmerge.rxjavaplayground.R;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;

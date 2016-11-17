@@ -6,6 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest1Activity;
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest2Activity;
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest3Activity;
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest4Activity;
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest5Activity;
+import me.tgmerge.rxjavaplayground.part1_rx.RxTest6Activity;
+
 public class TestActivity extends Activity {
 
     public static void start(Context context) {
@@ -33,5 +40,13 @@ public class TestActivity extends Activity {
 
     public void openRxTest4Activity(View view) {
         RxTest4Activity.start(this);
+    }
+
+    public void openRxTest5Activity(View view) {
+        RxTest5Activity.start(this);
+    }
+
+    public void openRxTest6Activity(View view) {
+        RxTest6Activity.start(this);
     }
 }

@@ -2,7 +2,9 @@
 
 阅读内容： <http://gank.io/post/560e15be2dca930e00da1083>
 
-## 概念：扩展的观察者模式
+## RxJava API 介绍和原理
+
+### 概念：扩展的观察者模式
 
 RxJava 是一个观察者模式的工具库。
 
@@ -17,7 +19,7 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
 
 特殊的事件：表示事件队列完结的`onCompleted()`和表示事件队列异常的`onError()`，正确运行的事件队列中，他们有且仅有一个（不是各有一个），且是事件序列中的最后一个。
 
-## 基本实现
+### 基本实现
 
     Code 1 - 创建 Observer（观察者）
 
@@ -52,7 +54,7 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
 
 使用`observable.subscribe(Action1 onNext, Action1 onError, Action0 onCompleted)`方法，可以无需显示地创建 Subscriber，而让 Observable 根据相应的动作隐式地自行创建 Subscriber。
 
-## 场景示例
+### 场景示例
 
     Code 6 - 依次打印字符串数组中的字符串
 
@@ -64,7 +66,7 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
 
 使用`Observable.create( new OnSubscribe<T> ).subscribe( new Observer<T> )`。
 
-## 线程控制
+### 线程控制
 
     Code 8, Code 9 - 线程控制
 
@@ -85,15 +87,17 @@ RxJava 的事件回调，最基本的事件是`onNext()`，它相当于`onClick(
 
 `subscribeOn(Scheduler.io())`和`observeOn(AndroidSchedulers.mainThread())`的组合非常适用于从 **后台线程获取数据，在主线程显示数据** 的情景。
 
-## map() 变换
+### 变换
 
 RxJava 提供了 **将事件序列中的对象或者整个序列进行处理，转换成不同的事件或事件序列** 的特性，即变换。
+
+#### map() 变换
 
     Code 10 - map() 变换
 
 `map()`使用`Func1`作为参数，直接变换了事件对象。
 
-## flatMap() 变换
+#### flatMap() 变换
 
     Code 11 - flatMap() 变换
 
@@ -154,21 +158,60 @@ D/RxTest4Activity: Code 11 - onNext: Student's name 4 - course 4
 
 `flatMap()`相当于用`Func1`将 **每个** 事件参数对象转换成了一个能发射另一些参数对象的 Observable，并集中汇总它们发射出来的对象。作为结果，每个原来的事件参数对象都被“展平”成了一系列另一种类型的参数对象，传递给原本的 Subscriber 那里。
 
-## throttleFirst() 变换
+#### throttleFirst() 变换
 
     Code 12 - throttleFirst() 变换
 
 这个变换可以忽略 **每次成功触发事件后一定时间内的其他事件**，也就是类似事件去抖动的机制。
 
-## 变换的原理：lift()
+#### 变换的原理：lift()
 
 简单来说，`lift()`使用了类似代理模式的方法，使用`Operator`创建一个新的`Observable`包裹原来的`Observable`，负责接收原来的`Observable`发出的事件，并在事件处理后发送给`Subscriber`。
 
 另外，RxJava 并不建议开发者自定义`Operator`直接使用`lift()`，而是尽量使用已有包装方法的组合来完成需求。
 
-## 对 Observable 的变换：compose()
+#### 对 Observable 的变换：compose()
 
 `compose()`针对`Observable`自身进行变换。
 
     Code 13 - compose() 变换
 
+使用`compose()`可以组合一系列的`lift()`操作。
+
+### 线程控制：Scheduler（二）
+
+`observeOn()`指定的其实是 Observable 变换到“当前”状态的时候的 Subscriber 所在的线程。
+
+    Code 14 - 多次切换线程
+
+![](img02.png)
+
+简单来说，`observeOn()`决定的是它之“下”的操作所在的线程；`subscribeOn()`决定的是它之“上”的操作所在的线程。
+
+但 subscribe 操作由下而上，onNext 由上到下；在没有被其他调度打断的时候，**onNext 的开始**会延续 **subscribe 的结束**的线程调度状态。
+
+**对于通知过程（onNext）来说**，只有最上面的那个`subscribeOn()`会生效，其后会依次受到各个`observeOn()`的影响。
+
+**对于订阅过程（subscribe）来说**，`subscribeOn()`从下到上依次生效。
+
+    Code 15 - 混合的 subscribeOn() 和 observeOn()
+
+![](img03.png)
+
+这样一来就可以在多种操作之间自由切换线程了。
+
+### doOnSubscribe() 的线程
+
+一个指定线程时存在的问题：Subscriber 的`onStart()`处在链式调用的底端，无法指定线程，只能执行于`subscribe()`被调用时所处的线程。
+
+`Observable.doOnSubscribe()`和`Subscriber.onStart()`同样是在`subscribe()`调用后、事件发送前执行，但它可以指定线程。
+
+默认情况下它会在和`subscribe()`发生的相同线程中执行；但如果`doOnSubscribe()`之后，也就是链式调用的 **下方** 存在`subscribeOn()`，它就会执行于这个`subscribeOn()`指定的线程。
+
+    Code 16 - doOnSubscribe() 的线程
+
+![](img04.png)
+
+## RxJava 的适用场景
+
+### 与 Retrofit 的结合

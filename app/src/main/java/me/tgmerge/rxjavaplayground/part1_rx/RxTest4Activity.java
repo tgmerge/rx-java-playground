@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground;
+package me.tgmerge.rxjavaplayground.part1_rx;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import me.tgmerge.rxjavaplayground.R;
 import rx.Observable;
-import rx.Subscriber;
 import rx.functions.Action1;
 import rx.functions.Func1;
 

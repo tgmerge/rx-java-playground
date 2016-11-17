@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground;
+package me.tgmerge.rxjavaplayground.part1_rx;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import me.tgmerge.rxjavaplayground.R;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
