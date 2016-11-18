@@ -24,11 +24,18 @@ public class JsonAPI {
 
     private interface JsonAPIService {
         @GET("/posts/{id}")
-        Observable<Object> getPost(@Path("id") int postId);
+        Observable<String> getPost(@Path("id") int postId);
+
+        @GET("/posts")
+        Observable<String> getPosts();
     }
 
-    public static Observable<Object> getPost(int postId) {
+    public static Observable<String> getPost(int postId) {
         return service.getPost(postId);
+    }
+
+    public static Observable<String> getPosts() {
+        return service.getPosts();
     }
 
 }
