@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground.part3_rxbus;
+package me.tgmerge.rxjavaplayground.rxplayground.part3_rxbus;
 
 import android.app.Activity;
 import android.content.Context;

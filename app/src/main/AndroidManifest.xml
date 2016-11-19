@@ -18,15 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".part1_rx.RxTest1Activity" />
-        <activity android:name=".part1_rx.RxTest2Activity" />
-        <activity android:name=".part1_rx.RxTest3Activity" />
-        <activity android:name=".part1_rx.RxTest4Activity" />
-        <activity android:name=".part1_rx.RxTest5Activity" />
-        <activity android:name=".part1_rx.RxTest6Activity" />
-        <activity android:name=".part2_retrofit.RxRetro1Activity" />
-        <activity android:name=".part2_retrofit.RxRetro2Activity" />
-        <activity android:name=".part3_rxbus.RxBus1Activity"></activity>
+        <activity android:name=".rxplayground.part1_rx.RxTest1Activity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest2Activity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest3Activity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest4Activity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest5Activity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest6Activity" />
+        <activity android:name=".rxplayground.part2_retrofit.RxRetro1Activity" />
+        <activity android:name=".rxplayground.part2_retrofit.RxRetro2Activity" />
+        <activity android:name=".rxplayground.part3_rxbus.RxBus1Activity" />
+        <activity android:name=".rxplayground.part4_retrofit.RxRetro3Activity"></activity>
     </application>
 
 </manifest>

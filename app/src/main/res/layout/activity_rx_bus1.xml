@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="me.tgmerge.rxjavaplayground.part3_rxbus.RxBus1Activity">
+    tools:context=".rxplayground.part3_rxbus.RxBus1Activity">
 
     <FrameLayout
         android:id="@+id/fl_subscriber"

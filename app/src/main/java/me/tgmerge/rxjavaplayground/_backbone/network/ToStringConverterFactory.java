@@ -13,18 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.tgmerge.rxjavaplayground._api;
+package me.tgmerge.rxjavaplayground._backbone.network;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
+
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 
-public class ToStringConverterFactory extends Converter.Factory {
+/**
+ * 一个将请求的 Response 转换成 String 的 Retrofit Converter 工厂
+ */
+public final class ToStringConverterFactory extends Converter.Factory {
     static final MediaType MEDIA_TYPE = MediaType.parse("text/plain");
 
     @Override
@@ -32,7 +36,8 @@ public class ToStringConverterFactory extends Converter.Factory {
                                                             Retrofit retrofit) {
         if (String.class.equals(type)) {
             return new Converter<ResponseBody, String>() {
-                @Override public String convert(ResponseBody value) throws IOException {
+                @Override
+                public String convert(ResponseBody value) throws IOException {
                     return value.string();
                 }
             };
@@ -40,11 +45,15 @@ public class ToStringConverterFactory extends Converter.Factory {
         return null;
     }
 
-    @Override public Converter<?, RequestBody> requestBodyConverter(Type type,
-                                                                    Annotation[] parameterAnnotations, Annotation[] methodAnnotations, Retrofit retrofit) {
+    @Override
+    public Converter<?, RequestBody> requestBodyConverter(Type type,
+                                                          Annotation[] parameterAnnotations,
+                                                          Annotation[] methodAnnotations,
+                                                          Retrofit retrofit) {
         if (String.class.equals(type)) {
             return new Converter<String, RequestBody>() {
-                @Override public RequestBody convert(String value) throws IOException {
+                @Override
+                public RequestBody convert(String value) throws IOException {
                     return RequestBody.create(MEDIA_TYPE, value);
                 }
             };

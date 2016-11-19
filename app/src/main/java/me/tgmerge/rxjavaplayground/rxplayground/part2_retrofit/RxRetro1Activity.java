@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground.part2_retrofit;
+package me.tgmerge.rxjavaplayground.rxplayground.part2_retrofit;
 
 import android.app.Activity;
 import android.content.Context;

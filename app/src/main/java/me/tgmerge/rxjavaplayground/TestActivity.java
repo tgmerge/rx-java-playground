@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest1Activity;
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest2Activity;
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest3Activity;
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest4Activity;
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest5Activity;
-import me.tgmerge.rxjavaplayground.part1_rx.RxTest6Activity;
-import me.tgmerge.rxjavaplayground.part2_retrofit.RxRetro1Activity;
-import me.tgmerge.rxjavaplayground.part2_retrofit.RxRetro2Activity;
-import me.tgmerge.rxjavaplayground.part3_rxbus.RxBus1Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest1Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest2Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest3Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest4Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest5Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part1_rx.RxTest6Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part2_retrofit.RxRetro1Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part2_retrofit.RxRetro2Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part3_rxbus.RxBus1Activity;
+import me.tgmerge.rxjavaplayground.rxplayground.part4_retrofit.RxRetro3Activity;
 
 public class TestActivity extends Activity {
 
@@ -63,5 +64,9 @@ public class TestActivity extends Activity {
 
     public void openRxBus1Activity(View view) {
         RxBus1Activity.start(this);
+    }
+
+    public void openRxRetro3Activity(View view) {
+        RxRetro3Activity.start(this);
     }
 }

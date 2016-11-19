@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground.part3_rxbus;
+package me.tgmerge.rxjavaplayground.rxplayground.part3_rxbus;
 
 
 import android.app.Fragment;
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import me.tgmerge.rxjavaplayground.R;
 import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.subscriptions.CompositeSubscription;
 
@@ -80,7 +79,6 @@ public class SubscriberFragment extends Fragment {
                                            // todo sticky 事件或许可以在出错时清除同类型事件，然后重新订阅？
                     }
                 });
-        AndroidSchedulers
         mSubscriptions.add(subs);
     }
 

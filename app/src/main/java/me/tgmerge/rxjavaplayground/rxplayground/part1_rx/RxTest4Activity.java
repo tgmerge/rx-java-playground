@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground.part1_rx;
+package me.tgmerge.rxjavaplayground.rxplayground.part1_rx;
 
 import android.app.Activity;
 import android.content.Context;

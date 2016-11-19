@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rx_retro3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="me.tgmerge.rxjavaplayground.rxplayground.part4_retrofit.RxRetro3Activity">
+
+    <Button
+        style="@style/TestButton"
+        android:text="Mocky - One String"
+        android:onClick="requestOneString" />
+
+    <Button
+        style="@style/TestButton"
+        android:text="Mocky - status=404"
+        android:onClick="requestStatus404" />
+
+    <Button
+        style="@style/TestButton"
+        android:text="Mocky - result=null"
+        android:onClick="requestResultNull" />
+
+    <Button
+        style="@style/TestButton"
+        android:text="Mocky - wait for two"
+        android:onClick="requestTwoWaitForAll" />
+
+</LinearLayout>

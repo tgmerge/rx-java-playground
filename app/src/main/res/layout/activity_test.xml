@@ -60,5 +60,10 @@
             style="@style/TestButton"
             android:onClick="openRxBus1Activity"
             android:text="Open RxBus1 Activity" />
+
+        <Button
+            style="@style/TestButton"
+            android:onClick="openRxRetro3Activity"
+            android:text="Open RxRetro3 Activity" />
     </LinearLayout>
 </ScrollView>
