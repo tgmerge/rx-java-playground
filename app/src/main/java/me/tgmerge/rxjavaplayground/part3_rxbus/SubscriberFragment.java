@@ -72,10 +72,11 @@ public class SubscriberFragment extends Fragment {
                     @Override
                     public void onError(Throwable e) {
                         super.onError(e);
-                        subscribeEvent();  // <-- todo 由于一旦处理过程中抛出异常 就会跳到onError来
-                                           //          事件流就中断了，需要重新订阅
-                                           //          但 sticky 事件不能重新订阅（会反复发送最后一个事件导致死循环）
-                                           //          sticky 事件或许可以在出错时清除最后一个事件？
+                        // Code 21 - RxBus 异常时重新订阅
+                        subscribeEvent();  // 由于一旦处理过程中抛出异常 就会跳到onError来
+                                           // 事件流就中断了，需要重新订阅
+                                           // 但 sticky 事件不能重新订阅（会反复发送最后一个事件导致死循环）
+                                           // todo sticky 事件或许可以在出错时清除同类型事件，然后重新订阅？
                     }
                 });
         mSubscriptions.add(subs);

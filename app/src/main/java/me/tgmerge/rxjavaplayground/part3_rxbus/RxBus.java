@@ -11,6 +11,8 @@ import rx.subjects.Subject;
 
 /**
  * from: https://github.com/YoKeyword/RxBus/blob/c739257c7fe637d820c98280e410dc36982affc6/rxbus/src/main/java/me/yokeyword/rxbus/RxBus.java
+ *
+ * Code 19 - RxJava 作为事件总线
  */
 
 public class RxBus {
@@ -37,7 +39,6 @@ public class RxBus {
 
     /**
      * 发送事件
-     * TODO Subject 是什么
      */
     public void post(Object event) {
         mBus.onNext(event);
@@ -46,7 +47,6 @@ public class RxBus {
     /**
      * 根据 eventType 的类型，返回特定类型的 Observable
      * [Observable<Object>] --ofType(XXX)--> [Observable<XXXType>]
-     * TODO ofType 操作符是什么
      */
     public <T> Observable<T> toObservable(Class<T> eventType) {
         return mBus.ofType(eventType);
@@ -64,6 +64,7 @@ public class RxBus {
     }
 
     // Sticky 相关
+    // Code 20 - RxBus 对 sticky 事件的处理
 
     /**
      * 发送一个新 sticky 事件

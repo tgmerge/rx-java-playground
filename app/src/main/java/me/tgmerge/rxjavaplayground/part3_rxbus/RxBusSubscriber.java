@@ -5,7 +5,7 @@ import rx.Subscriber;
 /**
  * from: https://github.com/YoKeyword/RxBus/blob/c739257c7fe637d820c98280e410dc36982affc6/rxbus/src/main/java/me/yokeyword/rxbus/RxBusSubscriber.java
  *
- * RxBus 使用的 Subscriber。
+ * RxBus 使用的 Subscriber
  */
 public abstract class RxBusSubscriber<T> extends Subscriber<T> {
     @Override
