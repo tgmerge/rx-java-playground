@@ -27,7 +27,7 @@ import java.lang.reflect.Type;
  *
  * See: http://stackoverflow.com/a/28325108/2996355
  */
-final class JsonElementTypeAdapter implements JsonDeserializer<JsonElement>, JsonSerializer<JsonElement> {
+final public class JsonElementTypeAdapter implements JsonDeserializer<JsonElement>, JsonSerializer<JsonElement> {
 
     @Override
     public JsonElement deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
