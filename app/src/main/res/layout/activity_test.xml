@@ -13,8 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             style="@style/TestButton"
@@ -55,5 +55,10 @@
             style="@style/TestButton"
             android:onClick="openRxRetro2Activity"
             android:text="Open RxRetro2 Activity" />
+
+        <Button
+            style="@style/TestButton"
+            android:onClick="openRxBus1Activity"
+            android:text="Open RxBus1 Activity" />
     </LinearLayout>
 </ScrollView>

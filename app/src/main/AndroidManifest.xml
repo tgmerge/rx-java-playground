@@ -25,7 +25,8 @@
         <activity android:name=".part1_rx.RxTest5Activity" />
         <activity android:name=".part1_rx.RxTest6Activity" />
         <activity android:name=".part2_retrofit.RxRetro1Activity" />
-        <activity android:name=".part2_retrofit.RxRetro2Activity"></activity>
+        <activity android:name=".part2_retrofit.RxRetro2Activity" />
+        <activity android:name=".part3_rxbus.RxBus1Activity"></activity>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import me.tgmerge.rxjavaplayground.part1_rx.RxTest5Activity;
 import me.tgmerge.rxjavaplayground.part1_rx.RxTest6Activity;
 import me.tgmerge.rxjavaplayground.part2_retrofit.RxRetro1Activity;
 import me.tgmerge.rxjavaplayground.part2_retrofit.RxRetro2Activity;
+import me.tgmerge.rxjavaplayground.part3_rxbus.RxBus1Activity;
 
 public class TestActivity extends Activity {
 
@@ -58,5 +59,9 @@ public class TestActivity extends Activity {
 
     public void openRxRetro2Activity(View view) {
         RxRetro2Activity.start(this);
+    }
+
+    public void openRxBus1Activity(View view) {
+        RxBus1Activity.start(this);
     }
 }
