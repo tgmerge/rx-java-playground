@@ -1,4 +1,4 @@
-package me.tgmerge.rxjavaplayground.rxplayground.part3_rxbus;
+package me.tgmerge.rxjavaplayground._backbone.bus;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

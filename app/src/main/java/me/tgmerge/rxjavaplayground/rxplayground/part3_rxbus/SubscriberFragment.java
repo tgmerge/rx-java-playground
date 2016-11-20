@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import me.tgmerge.rxjavaplayground.R;
+import me.tgmerge.rxjavaplayground._backbone.bus.RxBus;
+import me.tgmerge.rxjavaplayground._backbone.bus.RxBusSubscriber;
 import rx.Subscription;
 import rx.functions.Func1;
 import rx.subscriptions.CompositeSubscription;

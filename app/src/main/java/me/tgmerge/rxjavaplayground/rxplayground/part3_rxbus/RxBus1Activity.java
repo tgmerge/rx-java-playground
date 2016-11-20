@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import me.tgmerge.rxjavaplayground.R;
+import me.tgmerge.rxjavaplayground._backbone.bus.RxBus;
 
 public class RxBus1Activity extends Activity {
 
