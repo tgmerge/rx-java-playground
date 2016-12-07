@@ -28,7 +28,8 @@
         <activity android:name=".rxplayground.part2_retrofit.RxRetro2Activity" />
         <activity android:name=".rxplayground.part3_rxbus.RxBus1Activity" />
         <activity android:name=".rxplayground.part4_retrofit.RxRetro3Activity" />
-        <activity android:name=".rxplayground.part5_mvp.ListActivity"></activity>
+        <activity android:name=".rxplayground.part5_mvp.ListActivity" />
+        <activity android:name=".rxplayground.part1_rx.RxTest7Activity"></activity>
     </application>
 
 </manifest>
