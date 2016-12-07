@@ -27,7 +27,8 @@ public class BasePresenter<V extends BaseContract.View> implements BaseContract.
     public void attachView(BaseContract.View view) {
         mViewRef = new WeakReference<>((V) view);
         mSubs = new CompositeSubscription();
-        Log.d(TAG, "[attachView] P:" + this.getClass().getSimpleName() + " --> V:" + view.getClass().getSimpleName());
+        Log.d(TAG, "[attachView] P:" + this.getClass().getSimpleName()
+                + " --> V:" + view.getClass().getSimpleName());
     }
 
     @Override

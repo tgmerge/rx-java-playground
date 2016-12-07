@@ -19,7 +19,8 @@ public abstract class RetroSubscriber<T> extends Subscriber<T> {
     @Override
     public void onError(Throwable e) {
         if (e instanceof ApiException) {
-            Log.e("RetroSubscriber", "onError: status=" + ((ApiException) e).status + " msg=" + e.getMessage());
+            Log.e("RetroSubscriber", "onError: status=" + ((ApiException) e).status
+                    + " msg=" + e.getMessage());
             error(e.getMessage(), e);
             return;
         }

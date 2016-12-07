@@ -82,7 +82,9 @@ public abstract class BaseFragment<T extends BaseContract.Presenter> extends Fra
     }
 
     @Override
-    public void showChoice(String title, String message, String positiveText, DialogInterface.OnClickListener positiveClick, String negativeText, DialogInterface.OnClickListener negativeClick) {
+    public void showChoice(String title, String message,
+                           String positiveText, DialogInterface.OnClickListener positiveClick,
+                           String negativeText, DialogInterface.OnClickListener negativeClick) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }

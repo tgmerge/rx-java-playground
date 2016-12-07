@@ -13,7 +13,8 @@ import android.widget.Toast;
  * Created by tgmerge on 11/20.
  */
 
-public abstract class BaseActivity<T extends BaseContract.Presenter> extends AppCompatActivity implements BaseContract.View {
+public abstract class BaseActivity<T extends BaseContract.Presenter> extends AppCompatActivity
+        implements BaseContract.View {
 
     private static final String TAG = BaseActivity.class.getSimpleName();
 
@@ -84,7 +85,9 @@ public abstract class BaseActivity<T extends BaseContract.Presenter> extends App
     }
 
     @Override
-    public void showChoice(String title, String message, String positiveText, DialogInterface.OnClickListener positiveClick, String negativeText, DialogInterface.OnClickListener negativeClick) {
+    public void showChoice(String title, String message,
+                           String positiveText, DialogInterface.OnClickListener positiveClick,
+                           String negativeText, DialogInterface.OnClickListener negativeClick) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }

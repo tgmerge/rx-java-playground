@@ -20,6 +20,11 @@ public interface BaseContract {
         /** 获取 Presenter */
         Presenter getPresenter();
 
+        /*
+        * 下面这些方法让 Presenter 可以一定程度上直接控制 View 做出某些行为。
+        * 不能滥用。
+        */
+
         /** View 应该显示代表“没有内容”的图示和提示文字 */
         void showEmptyView(int imgResId, @Nullable String text);
 
@@ -68,7 +73,7 @@ public interface BaseContract {
 
         /**
          * 获取 Presenter 关联的 View
-         * 仅供临时使用
+         * 仅供临时使用，不应该持有 View
          *
          * 使用前需要检查 isViewAttached() 确定 View 还存在
          */

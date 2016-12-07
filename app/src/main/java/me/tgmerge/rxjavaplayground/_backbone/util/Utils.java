@@ -85,7 +85,8 @@ public class Utils {
 
     /** 将Unix格式的时间戳（秒）转换为YYYY/MM/DD格式的字符串 */
     public static String timestampToYYMMDD(long unixTimeStamp) {
-        return new SimpleDateFormat("yyyy/MM/dd", Locale.SIMPLIFIED_CHINESE).format(timestampToDate(unixTimeStamp));
+        return new SimpleDateFormat("yyyy/MM/dd", Locale.SIMPLIFIED_CHINESE)
+                .format(timestampToDate(unixTimeStamp));
     }
 
     /** 将字符串转换为float，异常时返回默认值(defaultVal) */

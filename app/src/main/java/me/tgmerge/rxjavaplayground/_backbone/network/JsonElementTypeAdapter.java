@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
  * 序列化：返回 JsonElement 本身，直接序列化。
  *
  * 在 model 中，指定 field 类型为 JsonElement 即可。
- * 
+ *
  *     class SomeModel extends BaseModel {
  *         private int id;
  *         private String name;
@@ -27,15 +27,18 @@ import java.lang.reflect.Type;
  *
  * See: http://stackoverflow.com/a/28325108/2996355
  */
-final public class JsonElementTypeAdapter implements JsonDeserializer<JsonElement>, JsonSerializer<JsonElement> {
+final public class JsonElementTypeAdapter implements JsonDeserializer<JsonElement>,
+        JsonSerializer<JsonElement> {
 
     @Override
-    public JsonElement deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public JsonElement deserialize(JsonElement json, Type typeOfT,
+                                   JsonDeserializationContext context) throws JsonParseException {
         return json;
     }
 
     @Override
-    public JsonElement serialize(JsonElement src, Type typeOfSrc, JsonSerializationContext context) {
+    public JsonElement serialize(JsonElement src, Type typeOfSrc,
+                                 JsonSerializationContext context) {
         return src;
     }
 }

@@ -95,7 +95,8 @@ public class RxBus {
                     }
                 }));
             } else {
-                return observable;  // 没有类型符合的 sticky 事件，直接返回和 toObservable 一样的 observable
+                // 没有类型符合的 sticky 事件，直接返回和 toObservable 一样的 observable
+                return observable;
             }
         }
     }
