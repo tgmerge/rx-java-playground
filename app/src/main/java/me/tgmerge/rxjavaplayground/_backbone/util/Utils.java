@@ -2,6 +2,7 @@ package me.tgmerge.rxjavaplayground._backbone.util;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
@@ -77,6 +78,11 @@ public class Utils {
     }
 
     // 字符串转换
+
+    /** 判断两个字符串是否相同，用比较好看的形式 */
+    public static boolean strEqual(@Nullable String str1, @NonNull String str2) {
+        return str2.equals(str1);
+    }
 
     /** 将Unix格式的时间戳（秒）转换为Date对象 */
     public static Date timestampToDate(long unixTimeStamp) {

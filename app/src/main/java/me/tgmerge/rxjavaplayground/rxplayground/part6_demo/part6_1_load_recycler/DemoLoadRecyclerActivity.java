@@ -1,19 +1,15 @@
-package me.tgmerge.rxjavaplayground.rxplayground.part1_rx;
+package me.tgmerge.rxjavaplayground.rxplayground.part6_demo.part6_1_load_recycler;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 import me.tgmerge.rxjavaplayground.R;
-import rx.Observable;
-import rx.Observer;
 
-public class RxTest7Activity extends Activity {
+public class DemoLoadRecyclerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_test7);
-
-        // todo
+        setContentView(R.layout.activity_demo_load_recycler);
     }
 }
